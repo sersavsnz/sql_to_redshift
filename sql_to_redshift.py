@@ -42,7 +42,7 @@ with open(f'redshift_{name}.sql', 'w') as redshift:
                 l = l.replace(' tinyINT ', ' SMALLINT ')
                 l = l.replace(' date ', ' DATE ')
                 l = l.replace(' datetime ', ' DATETIME ')
-                l = l.replace(' text ', ' TEXT ')
+                l = l.replace(' text ', ' VARCHAR(max) ')
                 l = re.sub(r'enum\(.+\)', 'VARCHAR(32)', l)
                 l = l.replace(' varbinary(', ' VARBINARY(')
                 l = l.replace(' binary(', 'VARBINARY(')
